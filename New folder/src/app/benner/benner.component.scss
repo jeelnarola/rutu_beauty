@@ -1,0 +1,55 @@
+.benner{
+    // position: relative;
+    margin-top: 20px;
+    
+    .benner-img{
+        background-image: url(../../assets/Image/benner.jpg);
+        width: 100%;
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding: 200px 0px 100px 0px;
+        .content{
+            padding-left: 200px;
+            span{
+                h1{
+                    font-size: 50px;
+                }
+            }
+        }
+        .bookAppoinmentbtn{
+            button{
+                margin: 40px 0px;
+                margin-left: 200px;
+                box-shadow: 0px 8px 9px rgba(0, 0, 0, 0.47);
+                padding: 15px 40px;
+                margin-top: 0px;
+                animation: bennerAni 3s linear infinite;
+                background-color: rgba(56, 29, 27, 1);
+                color: white;
+                text-transform: uppercase;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+@keyframes bennerAni{
+    0% {
+      transform:  translate(1px,20px)  ;
+    }
+    24% {
+      transform:  translate(1px,30px)  ;
+    }
+    50% {
+      transform:  translate(1px,12px)  ;
+    }
+    74% {
+      transform:  translate(1px,22px)  ;
+    }
+    100% {
+      transform:  translate(1px,20px)  ;
+    }
+  }
+  

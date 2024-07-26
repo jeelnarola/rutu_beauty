@@ -1,0 +1,19 @@
+.demo{
+    text-align: center;
+    font-size: 140px;
+    color: red;
+    position: fixed;
+    top: calc(50% - 100px);
+    width: fit-content;
+    font-weight: 400;
+    z-index: 9;
+    border: 5px solid red;
+    margin: 0 auto;
+    border-radius: 20px;
+    left: 0;
+    padding: 0 60px;
+    opacity: .8;
+    right: 0;
+    transform: rotate(348deg);
+    text-transform: uppercase;
+}

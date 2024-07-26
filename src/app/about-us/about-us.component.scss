@@ -1,0 +1,36 @@
+.about{
+    padding: 50px 0px;
+    .conatiner{
+        max-width: 1140px;
+        margin: auto;
+        .div{
+            width: 100%;
+            .flex{
+                display: flex;
+                flex-wrap: wrap;
+                .img{
+                    width: 50%;
+                    height: 500px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .about-ccontent{
+                    width: 50%;
+                    height: 500px;
+                    text-align: center;
+                    padding: 60px 0px;
+                    h3{
+                        font-size: 30px;
+                    }
+                    p{
+                        padding: 0px 50px;
+                        line-height: 30px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

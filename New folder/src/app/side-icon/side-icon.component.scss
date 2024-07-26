@@ -1,0 +1,35 @@
+.side{
+    position: fixed;
+    bottom: 30px;
+    right: 0px;
+    z-index: 1;
+    ul{
+        margin: 10px 30px;
+        list-style: none;
+        li{
+            margin: 10px 0px;
+            // padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            border-radius: 50px;
+        }
+        .whatsapp{
+            margin-bottom: 0px;
+            i{
+                font-size: 50px;
+                color: forestgreen;
+            }
+        }
+        .Bcktotop{
+            padding: 10px 10px;
+            font-size: 20px;
+            border-radius: 10px;
+            background-color: antiquewhite;
+            text-align: center;
+            background-color:  rgba(56, 29, 27, 1);
+            i{
+                color: white;
+            }
+        }
+    }
+}
