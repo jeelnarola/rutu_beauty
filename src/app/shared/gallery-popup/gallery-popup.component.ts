@@ -1,28 +1,30 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { BsModalRef } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
-  selector: 'app-service-popup',
-  templateUrl: './service-popup.component.html',
-  styleUrls: ['./service-popup.component.scss']
+  selector: 'app-gallery-popup',
+  templateUrl: './gallery-popup.component.html',
+  styleUrls: ['./gallery-popup.component.scss']
 })
-export class ServicePopupComponent {
+export class GalleryPopupComponent {
+  public bsModalRef!: BsModalRef
   @Input() title: string='';
   @ViewChild('fileInput') fileInput!: ElementRef;
   imgShow:boolean=true
   imgUplo:boolean=false
   fileSrc:string| ArrayBuffer | null | undefined="../../../assets/Image/1.png"
   form: any;
-  constructor(public bsModalRef: BsModalRef) {
+  constructor(private modalService: BsModalService) {
     this.form =new FormGroup({
-      image:new FormControl("",[Validators.required]),
-      name:new FormControl("",[Validators.required]),
-      des:new FormControl("",[Validators.required])
+      image:new FormControl(null,[Validators.required])
     })
   }
   openFileDialog() {
     this.fileInput.nativeElement.click();
+  }
+  close(): void {
+    this.modalService.hide()
   }
   onFileChange(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -42,5 +44,6 @@ export class ServicePopupComponent {
       ...this.form.value,
       image:image
     }
+    console.log(playlod)
   }
 }

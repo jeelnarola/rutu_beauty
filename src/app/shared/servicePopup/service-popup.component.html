@@ -1,19 +1,78 @@
 <div>
   <h1>{{title}}</h1>
-  <div class="div">
-    <div class="imgDiv">
-      <i class="fa-solid fa-cloud-arrow-up"></i>
-      <p class="Upload">Upload Image</p>
+<div class="div">
+  <form [formGroup]="form" (submit)="serviceAdd()">
+    <input type="file" name="" #fileInput id="" (change)="onFileChange($event)" style="display: none;" formControlName="image">
+    <div class="imgDiv" (click)="openFileDialog()">
+      <img [src]="fileSrc" alt="" *ngIf="imgShow">
+      <div *ngIf="imgUplo">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+        <p class="Upload">Upload Image</p>
+      </div>
     </div>
     <div class="title">
       <label for="service-description">Service Description</label>
-      <input type="text" class="sTitle" placeholder="Enter Service Title">
-      <!-- <textarea name="" id="" rows="10" cols="20"></textarea> -->
+      <input type="text" class="sTitle" placeholder="Enter Service Title" formControlName="name">
+      <ng-container *ngIf="form.controls['name'].invalid && form.controls['name'].touched" >
+        <p *ngIf="form.controls['name'].errors?.['required']" style="color: red;padding: 5px 0px 0px 10px;">Please Enter Name</p>
+      </ng-container>
       <div class="form-group">
         <label for="service-description">Service Description</label>
-        <textarea id="service-description" class="scrollable-textarea"></textarea>
-        <button type="button" class="btn btn-primary">Save</button>
+        <textarea id="service-description" class="scrollable-textarea" formControlName="des"></textarea>
+        <ng-container *ngIf="form.controls['des'].invalid && form.controls['des'].touched">
+          <p *ngIf="form.controls['des'].errors?.['required']" style="color: red;padding: 5px 0px 0px 10px;">Please Enter Name</p>
+        </ng-container>
+        <button type="submit" class="btn btn-primary">Save</button>
       </div>
     </div>
+  </form>
+
+
+
+
+  <!-- <input type="file" name="" #fileInput id="" (change)="onFileChange($event)" style="display: none;" formControlName="image">
+  <div class="imgDiv" (click)="openFileDialog()">
+    <img [src]="fileSrc" alt="" *ngIf="imgShow">
+    <div *ngIf="imgUplo">
+      <i class="fa-solid fa-cloud-arrow-up"></i>
+      <p class="Upload">Upload Image</p>
+    </div>
   </div>
+  <div class="title">
+    <label for="service-description">Service Description</label>
+    <input type="text" class="sTitle" placeholder="Enter Service Title" formControlName="name">
+    <div *ngIf="services.controls['name'].invalid && services.controls['name'].touched">
+    <div *ngIf="services.controls['name'].errors?.['required']"></div>
+    </div>
+    <div class="form-group">
+      <label for="service-description">Service Description</label>
+      <textarea id="service-description" class="scrollable-textarea" formControlName="des"></textarea>
+      <button type="button" class="btn btn-primary">Save</button>
+    </div>
+  </div> -->
 </div>
+</div>
+<!-- <h1>{{title}}</h1>
+<form [formGroup]="form" (submit)="serviceAdd()">
+  <label for="name">Name:</label>
+  <input type="text" id="name" formControlName="name"/>
+  <div *ngIf="form.controls['name'].touched && form.controls['name'].touched">
+    <div *ngIf="form.controls['name'].errors?.['required']">invalid Name</div>
+  </div>
+</form> -->
+<!-- <form [formGroup]="form" >
+  <label for="name">Name:</label>
+  <input id="name" formControlName="name" />
+  <div *ngIf="form.controls['name'].invalid && form.controls['name'].touched">
+    Name is required
+  </div>
+
+  <label for="email">Email:</label>
+  <input id="email" formControlName="email" />
+  <div *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+    <div *ngIf="form.controls['email'].errors?.['required']">Email is required</div>
+    <div *ngIf="form.controls['email'].errors?.['email']">Invalid email address</div>
+  </div>
+
+  <button type="submit">Submit</button>
+</form> -->

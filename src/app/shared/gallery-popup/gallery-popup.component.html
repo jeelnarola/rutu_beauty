@@ -1,0 +1,13 @@
+<div>
+  <i class="fa-solid fa-x" (click)="close()"></i>
+  <h1>{{title}}</h1>
+<div class="div">
+  <form [formGroup]="form" (submit)="serviceAdd()">
+    <input type="file" name="" #fileInput id="" (change)="onFileChange($event)" style="display: none;" formControlName="image">
+    <div class="imgDiv" (click)="openFileDialog()">
+      <img [src]="fileSrc" alt="" *ngIf="imgShow">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
+  </form>
+</div>
+</div>
